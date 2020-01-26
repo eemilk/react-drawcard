@@ -2,11 +2,9 @@ import React, { useState } from 'react';
 import './index.css';
 
 
-
-
 const App = () => {
 
-  //Imports all cardImages
+  //Imports all card images
   function importAll(r) {
     let cards = {};
     r.keys().map((item, index) => { cards[item.replace('./', '')] = r(item); });
@@ -50,7 +48,7 @@ const App = () => {
     console.log(playDeck);
     return (
       <div>
-        <img src={cards[playDeck[draftedCard]]} onClick={() => draftCard(draftedCard + 1)} />
+        <img src={cards[playDeck[draftedCard]]} onClick={() => draftCard(draftedCard + 1)} crop="fill" height="400" />
         {draftedCard + 1}
       </div>
     );
