@@ -45,7 +45,6 @@ const App = () => {
   function Deck() {
     const [draftedCard, draftCard] = useState(0);
 
-    console.log(playDeck);
     return (
       <div>
         <img src={cards[playDeck[draftedCard]]} onClick={() => draftCard(draftedCard + 1)} crop="fill" height="400" />
