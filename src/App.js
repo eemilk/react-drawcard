@@ -4,7 +4,7 @@ import './index.css';
 
 const App = () => {
 
-  //Imports all card images
+  //Imports all card images from the ""./cards" folder
   function importAll(r) {
     let cards = {};
     r.keys().map((item, index) => { cards[item.replace('./', '')] = r(item); });
@@ -21,6 +21,7 @@ const App = () => {
     return cardDeck;
   }
 
+  //This is a shuffle function. It uses famous "Fisher–Yates shuffle" algorithmn
   function shuffleDeck(array) {
     var currentIndex = array.length, temporaryValue, randomIndex;
 
@@ -43,7 +44,6 @@ const App = () => {
 
   function Deck() {
     const [draftedCard, draftCard] = useState(0);
-
     return (
       <div>
         <img src={cards[playDeck[draftedCard]]} alt="" onClick={() => draftCard(draftedCard + 1)} crop="fill" height="400" />
